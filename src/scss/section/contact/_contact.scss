@@ -1,0 +1,119 @@
+/* contacts style */
+
+.contact {
+	&__h3 {
+		font: bold #{map-deep-get($headings, 'sizes', 'h3-font-size')} #{map-deep-get($headings, 'fonts', 'headings-font-family')};
+		letter-spacing: 1px;
+		color: #413d4b;
+		text-align: center;
+		margin: 0 0 20px;
+		@include media('>=tablet') {
+			text-align: left;
+		}
+		@include media('>=desktop') {
+			margin: 0 0 32px;
+			font-size: 22px;
+			line-height: 24px;
+		}
+	}
+	&__form {
+		position: relative;
+		margin: 0 0 4px;
+	}
+	&__row {
+		@include media('>=desktop') {
+			margin: 0 0 12px;
+		}
+		textarea {
+			@include media('>=desktop') {
+				height: 199px;
+				padding: 14px 20px;
+			}
+		}
+	}
+	&__form-block {
+		text-align: center;
+		margin: 0 0 30px;
+		@include media('>=tablet') {
+			float: left;
+			width: 49%;
+			text-align: left;
+			margin: 0;
+		}
+	}
+	&__client {
+		@include media('>=tablet') {
+			float: right;
+			width: 48%;
+		}
+		@include media('>=desktop') {
+			width: 41.5%;
+			margin: 0 -10px 0 0;
+		}
+	}
+	&__list-logo {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		@include media('>=desktop') {
+			justify-content: space-between;
+		}
+	}
+	&__client-img {
+		width: 100%;
+	}
+	&__logo {
+		width: 33%;
+		padding: 0 10px;
+		margin: 0 0 10px;
+		@include media('>=desktop') {
+			width: 42%;
+			margin: 0 0 17px;
+			padding: 0;
+		}
+	}
+	&__invalid {
+		textarea,
+		input[type="text"],
+		input[type="email"] {
+			border: 1px solid red;
+		}
+	}
+	&__success-box {
+		font: 22px/24px map-get($base, 'secondary-font-serif');
+		color: #00e0d0;
+		display: none;
+		margin: 0 0 10px;
+		.contact__success & {
+			display: block;
+		}
+	}
+	&__textarea,
+	&__input {
+		-webkit-appearance: none;
+		-webkit-border-radius: 0;
+		box-sizing: border-box;
+		border: 1px solid map-get($forms, 'form-element-border-color');
+		padding: map-get($forms, 'form-element-padding');
+		width: 100%;
+		margin: 0 0 10px;
+		height: 45px;
+		letter-spacing: 0.7px;
+		color: $blue;
+		@include media('>=desktop') {
+			padding: 0.4em 1.4em;
+		}
+		&:focus {
+			border-color: map-get($forms, 'form-element-border-color');
+			outline: none;
+		}
+		@include placeholder {
+			color: $blue;
+		}
+	}
+	&__textarea {
+		resize: none;
+		vertical-align: top;
+		height: 180px;
+	}
+}

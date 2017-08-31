@@ -1,0 +1,18 @@
+/* title style */
+
+.title {
+	text-align: center;
+	position: relative;
+	margin: 0 0 12px;
+	padding: 0 0 5px;
+	&:before {
+		content:'';
+		position:absolute;
+		left:50%;
+		bottom:0;
+		width: 50px;
+		height: 2px;
+		background: #c6c4c9;
+		transform: translateX(-50%);
+	}
+}

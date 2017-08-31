@@ -1,0 +1,63 @@
+/* about style */
+
+.about {
+	background: #fff;
+	color: #413d4b;
+	@include media('>=desktop') {
+		margin: 0 0 5px;
+	}
+	&__heading {
+		font: bold #{map-deep-get($headings, 'sizes', 'h3-font-size')} #{map-deep-get($headings, 'fonts', 'headings-font-family')};
+		margin: 0 0 0.5em;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		color: $blue;
+		@include media('>desktop') {
+			margin: 0 0 21px;
+			font-size: 22px;
+			line-height: 24px;
+		}
+	}
+	&__image-holder {
+		margin: 0 auto 10px;
+		width: 50%;
+		@include media('>=tablet') {
+			width: 30%;
+			float: left;
+			margin: 0;
+		}
+		@include media('>=desktop') {
+			width: 25%;
+			margin: 5px 0 0 65px;
+		}
+	}
+	&__text-holder {
+		@include media('>=tablet') {
+			float: right;
+			width: 65%;
+		}
+		@include media('>=desktop') {
+			width: 57.5%;
+		}
+	}
+	&__text {
+		@include media('>=desktop') {
+			margin: 0 0 25px;
+		}
+	}
+	&__btn-holder,
+	&__heading {
+		text-align: center;
+		@include media('>=tablet') {
+			text-align: left;
+		}
+	}
+	&__btn-holder {
+		@include media('>=desktop') {
+			margin: 30px 0 0;
+		}
+	}
+	&__image {
+		width: 100%;
+	}
+}

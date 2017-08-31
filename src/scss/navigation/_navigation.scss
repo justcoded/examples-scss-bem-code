@@ -1,0 +1,86 @@
+/* navigation style */
+
+.menu {
+	@extend %listreset;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 900;
+	font-size: 13px;
+	line-height: 15px;
+	padding: 45px 0;
+	@include media('>=tablet') {
+		padding: 0;
+	}
+	&__item {
+		@include media('>=tablet') {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 0 0 10px;
+		}
+		@include media('>=desktop') {
+			margin: 0 0 0 23px;
+		}
+	}
+	&__link {
+		@include animate (color);
+		text-decoration: none;
+		display: block;
+		padding: 15px 5px;
+		color: map-get($nav, 'color-nav');
+		@include media('>=tablet') {
+			padding: 0;
+		}
+		&:hover,
+		&.menu__link_active {
+			color: map-get($nav, 'color-active');
+		}
+	}
+}
+
+.btn-menu {
+	text-indent: -9999px;
+	overflow: hidden;
+	position: absolute;
+	right: 15px;
+	top: 3px;
+	width: 40px;
+	height: 40px;
+	float: right;
+	z-index: 101;
+	display: block;
+	@include media('>=tablet') {
+		display: none;
+	}
+	&__decor,
+	&:after,
+	&:before {
+		content: "";
+		position: absolute;
+		top: 21px;
+		right: 0;
+		left: 0;
+		height: 2px;
+		transition: all .2s linear;
+		border-radius: 4px;
+		background: #fff;
+		.open-nav & {
+			top: 20px;
+			right: 0;
+			left: 0;
+			transform: rotate(45deg);
+		}
+	}
+	&:before {
+		top: 12px;
+	}
+	&:after {
+		top: 29px;
+		.open-nav & {
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+.open-nav {
+	overflow: hidden;
+}

@@ -1,0 +1,41 @@
+/* common style */
+
+.page {
+	@include font-smoothing(on);
+	color: map-get($base, 'base-text-color');
+	background: map-get($base, 'base-background-color');
+	font: 300 #{map-get($base, 'base-font-size')}/#{map-get($base, 'base-line-height')} #{map-get($base, 'base-font-sans-serif')};
+	min-width: map-get($base, base-min-width);
+	@include media('>=tablet') {
+		font-size: 14px;
+		line-height: 21px;
+	}
+}
+
+// hide tel links on desktop
+@media only screen and (min-width:1025px) {
+	.footer__tel[href^=tel] {
+		cursor:default;
+		pointer-events:none;
+	}
+}
+
+.page__wrapper {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.container {
+	@extend %clearfix;
+	max-width: 970px;
+	padding: 15px 15px;
+	margin: 0 auto;
+	position: relative;
+	@include media('>=tablet') {
+		padding: 40px 15px;
+	}
+	@include media('>=desktop') {
+		padding: 65px 15px;
+	}
+}

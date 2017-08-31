@@ -1,0 +1,128 @@
+/* slider style */
+
+.testimonials {
+	&__slider-wrap {
+		max-width: 550px;
+		margin: 0 auto;
+		padding: 0 15px;
+		@include media('>=desktop') {
+			padding: 0 50px;
+			max-width: 100%;
+		}
+		.slick-slide:focus {
+			outline: none;
+		}
+		&__slider {
+			margin: 0 0 20px;
+			padding: 0 15px;
+		}
+		&__slide {
+			font-family: map-get($base, 'secondary-font-serif');
+			&.slick-slide {
+				padding: 25px 0 0;
+				@include media('>=desktop') {
+					font-size: 16px;
+					line-height: 26px;
+					padding: 67px 0 0;
+					letter-spacing: 0.5px;
+				}
+				&:before {
+					@extend .icon-quotes;
+					@extend [class^="icon-"];
+					position:absolute;
+					left:50%;
+					top:0;
+					transform: translateX(-50%);
+					@include media('>=desktop') {
+						font-size: 30px;
+					}
+				}
+			}
+			p {
+				@include media('>=desktop') {
+					margin: 0 0 45px;
+				}
+			}
+		}
+	}
+	&__name,
+	&__status {
+		font: 10px/12px map-get($base, 'base-font-sans-serif');
+		display: block;
+		font-weight: 900;
+		margin: 0 0 5px;
+		@include media('>=desktop') {
+			font-size: 14px;
+			line-height: 16px;
+		}
+	}
+	&__status {
+		font-weight: 300;
+		@include media('>=desktop') {
+			font-size: 13px;
+			line-height: 15px;
+		}
+	}
+	&__slide-link {
+		@include animate (width);
+		border-radius: 100px;
+		margin: 0 8px;
+		line-height: 70px;
+		@include media('>=desktop') {
+			margin: 0 7px;
+			width: 45px;
+		}
+		&.slick-center{
+			opacity: 1;
+			position: relative;
+			z-index: 10;
+			width: 70px !important;
+		}
+		img {
+			width: 100%;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	&__slider-nav {
+		max-width: 320px;
+		margin: 0 auto;
+		.slick-list {
+			overflow: hidden;
+			padding: 0 10px !important;
+			@include media('>=desktop') {
+				padding: 15px 5px !important;
+			}
+		}
+		.slick-slide:focus {
+			outline: none;
+		}
+		.slick-track {
+			height: 70px;
+			display:flex;
+		}
+	}
+	&__slider-prev,
+	&__slider-next {
+		position:absolute;
+		left:-41px;
+		top:52%;
+		transform: translateY(-50%);
+		font-size: 0;
+		cursor: pointer;
+		visibility: hidden;
+		@include media('>=tablet') {
+			visibility: visible;
+		}
+		&:hover {
+			opacity: .8;
+		}
+		i:before {
+			font-size: 22px;
+		}
+	}
+	&__slider-next {
+		left: auto;
+		right: -41px;
+	}
+}

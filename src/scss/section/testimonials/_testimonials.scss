@@ -1,0 +1,18 @@
+/* testimonials style */
+
+.testimonials {
+	text-align: center;
+	background-size: cover;
+	background-position: 50% 50%;
+	position: relative;
+	overflow: hidden;
+	.container {
+		padding: 15px 0;
+		@include media('>=tablet') {
+			padding: 40px 0;
+		}
+		@include media('>=desktop') {
+			padding: 65px 15px 57px;
+		}
+	}
+}

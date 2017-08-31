@@ -1,0 +1,124 @@
+/* video style */
+
+.video {
+	height: 180px;
+	position: relative;
+	overflow: hidden;
+	@include media('>=tablet') {
+		height: 350px;
+	}
+	@include media('>=desktop') {
+		height: 550px;
+	}
+	&:before {
+		@include animate (opacity);
+		opacity: 1;
+		content:'';
+		position:absolute;
+		left:0;
+		top:0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(to right, rgba(10, 5, 47, 0.85), rgba(49, 29, 94, 0.85));
+	}
+	&.video_active:before {
+		opacity: 0;
+	}
+	&__container {
+		@include animate (opacity, 1s);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -1;
+		overflow: hidden;
+		transform: translateX(-50%) translateY(-50%);
+		object-fit: cover;
+	}
+	&__play-text {
+		font-size: 10px;
+		line-height: 12px;
+		font-weight: 900;
+		letter-spacing: 0.5px;
+		display: block;
+		text-transform: uppercase;
+		@include media('>=desktop') {
+			font-size: 16px;
+			line-height: 18px;
+		}
+	}
+	&__block {
+		position:absolute;
+		left:50%;
+		top:50%;
+		transform: translate(-50%,-50%);
+		text-align: center;
+	}
+	&__play {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 0 10px;
+		position: relative;
+		width: 50px;
+		height: 50px;
+		font-size: 0;
+		border-radius: 100px;
+		border: 2px solid #fff;
+		color: #fff;
+		background: transparent;
+		cursor: pointer;
+		@include media('>=desktop') {
+			font-size: 0;
+			width: 100px;
+			height: 100px;
+			border: 3px solid #fff;
+			margin: 0 0 30px;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			opacity: .8;
+		}
+		.icon-pause {
+			opacity: 0;
+			&:before {
+				font-size: 25px;
+				@include media('>=desktop') {
+					font-size: 63px;
+				}
+			}
+		}
+		.icon-play{
+			left: 57%;
+			@include media('>=desktop') {
+				left: 55%;
+			}
+			&:before {
+				font-size: 25px;
+				@include media('>=desktop') {
+					font-size: 46px;
+				}
+			}
+		}
+		i {
+			@include animate (opacity);
+			opacity: 1;
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+	&.video_active {
+		.icon-play {
+			opacity: 0;
+		}
+		.icon-pause {
+			opacity: 1;
+		}
+	}
+}

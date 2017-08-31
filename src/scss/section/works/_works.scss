@@ -1,0 +1,87 @@
+/* works style */
+
+.works {
+	text-align: center;
+	background: #fff;
+	margin: 0 0 15px;
+	@include media('>=tablet') {
+		margin: 0 0 30px;
+	}
+	@include media('>=desktop') {
+		margin: 0 0 70px;
+	}
+	&__h3 {
+		font: bold #{map-deep-get($headings, 'sizes', 'h3-font-size')} #{map-deep-get($headings, 'fonts', 'headings-font-family')};
+		margin: 0 0 0.5em;
+		letter-spacing: 1px;
+		color: $blue;
+		@include media('>=tablet') {
+			float: left;
+		}
+		@include media('>desktop') {
+			font-size: 22px;
+			line-height: 24px;
+		}
+	}
+	&__btn-see {
+		@include animate (color);
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 0 10px;
+		text-decoration: none;
+		color: $blue;
+		@include media('>=tablet') {
+			float: right;
+			margin: 3px 0 10px;
+			letter-spacing: 0.7px;
+		}
+		&:hover {
+			color: #00e0d0;
+		}
+	}
+	&__wrap-post {
+		@extend %listreset;
+		padding: 0 20px;
+		margin: 0 -10px 20px;
+		overflow: hidden;
+		@include media('>=tablet') {
+			padding: 0;
+			margin: 0 0 20px;
+		}
+		@include media('>=desktop') {
+			margin: 0 0 70px;
+		}
+	}
+	&__img {
+		width: 100%;
+		vertical-align: top;
+	}
+	&__post {
+		width: 50%;
+		padding: 0 5px;
+		margin: 0 0 10px;
+		float: left;
+		box-sizing: border-box;
+		@include media('>=tablet') {
+			width: 25%;
+			margin: 0;
+			padding: 0;
+		}
+		@include media('>=desktop') {
+			width: 16.66%;
+		}
+	}
+	&__btn{
+		@include media('>=desktop') {
+			padding: 13px 26px 9px;
+		}
+		.works_hidden-btn & {
+			display: none;
+		}
+	}
+	.container {
+		@include media('>=desktop') {
+			padding: 65px 15px 57px;
+		}
+	}
+}

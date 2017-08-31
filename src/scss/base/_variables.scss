@@ -1,0 +1,79 @@
+//Color 
+$blue: #413d4b;
+
+
+// Headers
+$headings: (
+  'sizes': (
+    'h1-font-size': 20px,
+    'h2-font-size': 18px,
+    'h3-font-size': 16px,
+    'h4-font-size': 14px,
+    'h5-font-size': 12px,
+    'h6-font-size': 10px
+  ),
+  'fonts': (
+    'headings-font-family': unquote("'Playfair Display', Georgia, serif"),
+    'headings-color': inherit
+  )
+);
+
+// Body
+$base: (
+  'base-font-sans-serif': unquote("Roboto, 'Helvetica Neue', Helvetica, sans-serif"),
+  'base-font-serif': unquote("'Times New Roman', Times, Baskerville, Georgia, serif"),
+  'secondary-font-serif': unquote("'Playfair Display', Times, Baskerville, Georgia, serif"),
+  'btn-font-sans-serif': unquote("'Hammersmith One', 'Helvetica Neue', Helvetica, sans-serif"),
+  'base-text-color': #fff,
+  'base-background-color': #fff,
+  'base-link-color':#39f,
+  'base-font-size': 12px,
+  'base-line-height': 1.2,
+  'base-font-family': unquote("Arial, 'Helvetica Neue', Helvetica, sans-serif"),
+  'vertical-rhythm': '(map-get($base, base-line-height) * 1em)',
+  'base-min-width': 320px
+);
+
+// Forms
+$forms: (
+  'form-element-padding': unquote("0.4em 0.7em"),
+  'form-element-border-color': #e5e5e5,
+  'form-element-focus-border-color': #e5e5e5,
+  'placeholder-color': #413d4b
+);
+
+
+//Button {
+$button: (
+  'btn-color': #00e0d0,
+  'btn-color-border': #00e0d0,
+  'btn-font-size':10px,
+  'btn-line-height': 10px,
+  'btn-width': 100px,
+  'btn-radius': 2px
+);
+
+//Navigation
+$nav: (
+  'color-nav': #fff,
+  'color-active': #00e0d0
+);
+
+// Breakpoints for include media
+$breakpoints: (
+  'phone': 320px,
+  'tablet': 768px,
+  'desktop': 1024px,
+  'widescreen': 1200px
+);
+
+// Keywords
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);

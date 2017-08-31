@@ -1,0 +1,102 @@
+/* team style */
+
+.team {
+	position: relative;
+	background-position: 50% 50%;
+	background-size: cover;
+	text-align: center;
+	&__h3 {
+		font: bold #{map-deep-get($headings, 'sizes', 'h3-font-size')} #{map-deep-get($headings, 'fonts', 'headings-font-family')};
+		margin: 0 0 0.5em;
+		color: map-deep-get($headings, 'fonts', 'headings-color');
+		letter-spacing: 1px;
+		@include media('>desktop') {
+			font-size: 22px;
+			line-height: 24px;
+		}
+	}
+	&__title {
+		font-weight: 400;
+		color: #f9f9f9;
+		margin: 0 0 25px;
+		letter-spacing: 0.3px;
+		@include media('>=tablet') {
+			font-size: 16px;
+			line-height: 18px;
+		}
+		@include media('>=desktop') {
+			margin: 0 0 46px;
+		}
+		&:before {
+			background: #655c80;
+		}
+	}
+	&__row {
+		margin: 0 -10px;
+		overflow: hidden;
+		display: flex;
+		flex-wrap:wrap;
+		@include media('>=desktop') {
+			margin: 0 -10px 46px;
+		}
+	}
+	&__text-box {
+		font-family: 'secondary-font-serif';
+	}
+	&__item {
+		margin: 0 0 20px;
+		padding: 0 15px;
+		width: 100%;
+		box-sizing: border-box;
+		@include media('>=tablet') {
+			display: flex;
+			flex-direction: column;
+			width: 25%;
+			padding: 0 10px;
+			float: left;
+		}
+	}
+	&__img-holder {
+		min-height: 300px;
+		background: #fff;
+		@include media('>=tablet') {
+			min-height: 0;
+			flex:auto;
+		}
+	}
+	&__img {
+		width: 100%;
+		vertical-align: bottom;
+	}
+	&__text {
+		border: 1px solid #7b788e;
+		padding: 15px 5px;
+		@include media('>=desktop') {
+			padding: 16px 5px 20px;
+		}
+	}
+	&__name,
+	&__status {
+		font: 14px/16px map-get($base, 'base-font-sans-serif');
+		display: block;
+		margin: 0 0 5px;
+	}
+	&__name {
+		font-weight: 900;
+		color: #fff;
+		margin: 0 0 5px;
+	}
+	&__btn-holder {
+		letter-spacing: 0.8px;
+		margin: 0 0 4px;
+	}
+	&__btn-holder-text {
+		margin: 0 0 23px;
+	}
+	&__status {
+		font-size: 13px;
+		line-height: 15px;
+		color: #fafafa;
+		font-weight: 300;
+	}
+}

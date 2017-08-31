@@ -1,0 +1,15 @@
+/* Vendors*/
+@import './node_modules/include-media/dist/_include-media.scss';
+
+/* Base modules*/
+@import 'base/main';
+
+@import 'header/header';
+
+@import 'footer/footer';
+
+@import 'navigation/navigation';
+
+@import 'section/main';
+
+@import 'general/main';

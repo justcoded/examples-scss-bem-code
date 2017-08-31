@@ -1,0 +1,32 @@
+/* button style */
+
+.btn {
+	@include animate (color background);
+	font: #{map-get($button, 'btn-font-size')}/#{map-get($button, 'btn-line-height')} #{map-get($base, 'btn-font-sans-serif')};
+	color: map-get($button, 'btn-color');
+	border: 1px solid map-get($button, 'btn-color-border');
+	min-width: map-get($button, 'btn-width');
+	border-radius: map-get($button, 'btn-radius');
+	text-transform: uppercase;
+	background: transparent;
+	padding: 10px 5px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	cursor: pointer;
+	@include media('>=tablet') {
+		font-size: 16px;
+		line-height: 16px;
+		padding: 12px 14px 10px;
+		min-width: 120px;
+	}
+	&:hover {
+		color: #fff;
+		background: map-get($button, 'btn-color-border');
+	}
+	&:focus {
+		outline: none;
+	}
+}
